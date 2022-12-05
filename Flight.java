@@ -13,10 +13,13 @@ public class Flight {
         int pair [] = new int[2];
         for (int i=0; i<movies.length; i++){
             for (int movie : movies){
-                int pairDuration = movie + movies[i];
-                if (pairDuration <= totalDesiredDuration && pairDuration>max){
-                    pair[0] = i;
-                    pair[1] = j;
+                if (i != j){
+                    int pairDuration = movie + movies[i];
+                    if (pairDuration <= totalDesiredDuration && pairDuration>max){
+                        max = pairDuration;
+                        pair[0] = i;
+                        pair[1] = j;
+                    }
                 }
             }
         }
